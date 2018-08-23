@@ -1,0 +1,21 @@
+greedy_max_protein(C, foods):                              
+  todo = foods                                              1
+  result = empty vector                                     1
+  result_cal = 0                                            1
+  while todo is not empty:                                  1(n)
+    Find the food f in todo of maximum protein.             log(n)           
+    Remove f from todo.                                     1(n)
+    Let c be f’s calories.                                  1(n)
+    if (result_cal + c) <= C:                               1(n)
+      result.add_back(f)                                    1(n)
+      result_cal += c                                       1(n)
+  return result                                             1
+
+lim  6n + log(n) + 3 = 3 + log(n) + 0
+x->∞
+
+answer = O(n log(n))
+
+The longest part of this is the sorting algorithm used to 
+sort from most to least protein. Time for merge sort 
+is n log n
